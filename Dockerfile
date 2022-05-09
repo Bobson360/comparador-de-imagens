@@ -84,9 +84,9 @@ RUN ln -s /usr/include/locale.h /usr/include/xlocale.h && \
 
 # Install OpenCV
 RUN mkdir /opt && cd /opt && \
-  wget https://github.com/opencv/opencv/archive/3.2.0.zip && \
+  wget https://github.com/opencv/opencv/archive/refs/heads/3.4.zip && \
   unzip 3.2.0.zip && rm 3.2.0.zip && \
-  wget https://github.com/opencv/opencv_contrib/archive/3.2.0.zip && \
+  wget https://github.com/opencv/opencv_contrib/archive/3.4.0.zip && \
   unzip 3.2.0.zip && rm 3.2.0.zip \
   && \
   cd /opt/opencv-3.2.0 && mkdir build && cd build && \
