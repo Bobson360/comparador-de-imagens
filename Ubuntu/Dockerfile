@@ -32,13 +32,10 @@ RUN wget https://github.com/Kitware/CMake/releases/download/v3.23.1/cmake-3.23.1
 RUN tar xzvf cmake-3.23.1.tar.gz
 RUN cd cmake-3.23.1 && ./configure && make && make install
     
-RUN mkdir ~/opencv_build && cd ~/opencv_build
-RUN git clone https://github.com/opencv/opencv.git
-RUN git clone https://github.com/opencv/opencv_contrib.git
-# RUN mkdir -p opencv_build/opencv/build && cd opencv && cd build
-
-# Install Open CV - Warning, this takes absolutely forever
-RUN cd opencv && mkdir -p build && cd build && \
+RUN mkdir ~/opencv_build && cd ~/opencv_build && \
+    git clone https://github.com/opencv/opencv.git &&\
+    git clone https://github.com/opencv/opencv_contrib.git && \
+    cd opencv && mkdir -p build && cd build && \
     cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D CMAKE_INSTALL_PREFIX=/usr/local \ 
     -D INSTALL_C_EXAMPLES=ON \ 
